@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Bill.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ui.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Capgemini.Techtest\Capgemini.Techtest.csproj">
