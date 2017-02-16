@@ -24,7 +24,7 @@ namespace Capgemini.Techtest.UnitTests
         }
 
         [TestMethod]
-        public void CalculateBill_Given_MenuConsistsOfAColaCoffeeAndCheeseSandwich_Assert_BillShouldBe350()
+        public void CalculateBill_Given_MenuConsistsOfAColaCoffeeAndCheeseSandwich_Assert_BillShouldBe385()
         {
             var cola = new MenuItem()
             {
@@ -54,7 +54,7 @@ namespace Capgemini.Techtest.UnitTests
             _underTest.AddItem(coffee);
             _underTest.AddItem(cheeseSandwich);
 
-            Assert.AreEqual(3.50m, _underTest.CalculateBill());
+            Assert.AreEqual(3.85m, _underTest.CalculateBill());
         }
 
         [TestMethod]
@@ -96,8 +96,8 @@ namespace Capgemini.Techtest.UnitTests
             _underTest.AddItem(cola);
             _underTest.AddItem(cheeseSandwich);
 
-            Assert.AreEqual(0, _underTest.ServiceCharge);
-            Assert.AreEqual(0.50m, _underTest.CalculateBill());
+            Assert.AreEqual(0.25m, _underTest.ServiceCharge);
+            Assert.AreEqual(2.75m, _underTest.CalculateBill());
         }
 
         [TestMethod]

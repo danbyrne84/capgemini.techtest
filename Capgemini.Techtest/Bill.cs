@@ -10,9 +10,24 @@ namespace Capgemini.Techtest
     {
         public IList<MenuItem> MenuItems { get; }
 
-        public int ServiceCharge
+        public decimal ServiceCharge
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                if (MenuItems.Any(mi => mi.ItemType == ItemType.Food && mi.Temperature == Temperature.Hot))
+                {
+                    // 20% service charge for hot food
+                    return Math.Round((CalculateBill(false) / 100 * 20), 2);
+                }
+
+                if (MenuItems.Any(mi => mi.ItemType == ItemType.Food))
+                {
+                    // else 10% charge for including food
+                    return Math.Round((CalculateBill(false) / 100 * 10), 2);
+                }
+
+                return 0;
+            }
         }
 
         public Bill()
@@ -25,9 +40,16 @@ namespace Capgemini.Techtest
             MenuItems.Add(item);
         }
 
-        public decimal CalculateBill()
+        public decimal CalculateBill(bool includeServiceCharge = true)
         {
-            return MenuItems.Sum(x => x.Price);
+            var basePrice = MenuItems.Sum(x => x.Price);
+
+            if (includeServiceCharge)
+            {
+                basePrice += ServiceCharge;
+            }
+
+            return basePrice;
         }
     }
 }

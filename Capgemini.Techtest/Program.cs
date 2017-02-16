@@ -17,24 +17,28 @@ namespace Capgemini.Techtest
                 {
                     Name = "cola",
                     Temperature = Temperature.Cold,
+                    ItemType = ItemType.Beverage,
                     Price = 0.50m
                 },
                 new MenuItem()
                 {
                     Name = "coffee",
                     Temperature = Temperature.Hot,
+                    ItemType = ItemType.Beverage,
                     Price = 1.00m
                 },
                 new MenuItem()
                 {
                     Name = "cheese sandwich",
                     Temperature = Temperature.Cold,
+                    ItemType = ItemType.Food,
                     Price = 2.00m
                 },
                 new MenuItem()
                 {
                     Name = "steak sandwich",
                     Temperature = Temperature.Hot,
+                    ItemType = ItemType.Food,
                     Price = 4.50m
                 }
             };
