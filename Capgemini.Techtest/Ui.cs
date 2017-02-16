@@ -59,7 +59,8 @@ namespace Capgemini.Techtest
                 }
             }
 
-            _console.WriteLine($"Thankyou, your bill comes to {_bill.CalculateBill()}");
+            _console.WriteLine(_bill.ToString());
+
             _console.WriteLine("Press any key to end");
             _console.ReadLine();
         }

@@ -51,5 +51,26 @@ namespace Capgemini.Techtest
 
             return basePrice;
         }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine("Your bill:");
+            sb.AppendLine("----------");
+
+            foreach (var item in MenuItems)
+            {
+                sb.AppendLine($"{item.Name} @ {item.Price}");
+            }
+
+            sb.AppendLine($"Service charge @ {ServiceCharge}");
+            sb.AppendLine();
+
+            sb.AppendLine($"Total: {CalculateBill(true)}");
+            sb.AppendLine("Thankyou!");
+
+            return sb.ToString();
+        }
     }
 }
