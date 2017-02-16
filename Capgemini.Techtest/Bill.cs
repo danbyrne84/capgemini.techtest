@@ -10,6 +10,11 @@ namespace Capgemini.Techtest
     {
         public IList<MenuItem> MenuItems { get; }
 
+        public int ServiceCharge
+        {
+            get { throw new NotImplementedException(); }
+        }
+
         public Bill()
         {
             MenuItems = new List<MenuItem>();
