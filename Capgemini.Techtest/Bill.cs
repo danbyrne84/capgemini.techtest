@@ -8,21 +8,21 @@ namespace Capgemini.Techtest
 {
     public class Bill
     {
-        private readonly IList<MenuItem> _menuItems;
+        public IList<MenuItem> MenuItems { get; }
 
         public Bill()
         {
-            _menuItems = new List<MenuItem>();
+            MenuItems = new List<MenuItem>();
         }
 
         public void AddItem(MenuItem item)
         {
-            _menuItems.Add(item);
+            MenuItems.Add(item);
         }
 
         public decimal CalculateBill()
         {
-            return _menuItems.Sum(x => x.Price);
+            return MenuItems.Sum(x => x.Price);
         }
     }
 }
