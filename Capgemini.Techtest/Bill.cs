@@ -17,12 +17,12 @@ namespace Capgemini.Techtest
 
         public void AddItem(MenuItem item)
         {
-            throw new NotImplementedException();
+            _menuItems.Add(item);
         }
 
         public decimal CalculateBill()
         {
-            throw new NotImplementedException();
+            return _menuItems.Sum(x => x.Price);
         }
     }
 }
